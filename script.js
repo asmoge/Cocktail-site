@@ -10,7 +10,7 @@ async function fetchCocktails() {
         text = text.substring(text.indexOf("(") + 1, text.lastIndexOf(")"));
         const data = JSON.parse(text);
         
-        // Extract rows
+        // Extract rows 
         const rows = data.table.rows;
         let cocktails = rows.map(row => ({
             name: row.c[2]?.v || "Unnamed Cocktail",  // Cocktail Name
