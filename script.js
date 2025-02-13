@@ -13,11 +13,11 @@ async function fetchCocktails() {
         // Extract rows
         const rows = data.table.rows;
         let cocktails = rows.map(row => ({
-            name: row.c[2].v,
+            name: row.c[0].v,
             ingredients: row.c[1].v,
             lastHad: row.c[2]?.v || "N/A",
-            rating: row.c[4]?.v || "N/A",
-            flavor: row.c[3]?.v || "N/A"
+            rating: row.c[3]?.v || "N/A",
+            flavor: row.c[4]?.v || "N/A"
         }));
 
         displayCocktails(cocktails);
